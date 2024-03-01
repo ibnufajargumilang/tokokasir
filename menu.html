@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | FlamboyanStore</title>
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1rem;
+        }
+        body{
+            background-color: #bfc2e7;
+        }
+        #tanggalWaktu {
+            color: #fff;
+            font-weight: bold;
+        }
+        .breadcumb h1 {
+            padding: .5rem 2rem 0 2rem;
+            font-size: 2rem !important;
+        }
+        #areaMenu {
+            padding: 1.5rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-gap: 2rem;
+        }
+        .card-item {
+            min-width: 100%;
+            min-height: 100px;
+            background-color: blue;
+            border-radius: .25rem;
+        }
+    </style>
+</head>
+<body>
+    <nav style="background-color: black; padding: .5rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 5px 5px 16px rgba(0,0,0,1);">
+        <div style="display: flex; align-items: center; color: #fff;">
+            <img src="icon.png" alt="Logo Kasir" style="margin-right: .25rem;"><h1 style="font-size: 1.2rem;">Toko Kasir</h1>
+        </div>
+        <div>
+            <div id="tanggalWaktu"></div>
+        </div>
+    </nav>
+    <div class="breadcumb"><h1>Dashboard</h1></div>
+    <section id="areaMenu">
+        <div class="card-item">a</div>
+        <div class="card-item">a</div>
+    </section>
+    <script>
+        function formatTanggal() {
+            var sekarang = new Date();
+
+            var bulanNames = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
+
+            var tanggal = sekarang.getDate();
+            var bulanIndex = sekarang.getMonth(); // Mengambil indeks bulan
+            var tahun = sekarang.getFullYear();
+
+            tanggal = (tanggal < 10) ? '0' + tanggal : tanggal;
+
+            return tanggal + '-' + bulanNames[bulanIndex] + '-' + tahun;
+        }
+
+        function formatWaktu() {
+            var sekarang = new Date();
+
+            var jam = sekarang.getHours();
+            var menit = sekarang.getMinutes();
+            var detik = sekarang.getSeconds();
+
+            // Menambahkan nol di depan jika jam, menit, atau detik kurang dari 10
+            jam = (jam < 10) ? '0' + jam : jam;
+            menit = (menit < 10) ? '0' + menit : menit;
+            detik = (detik < 10) ? '0' + detik : detik;
+
+            return jam + ':' + menit + ':' + detik;
+        }
+
+        function updateWaktu() {
+            var tanggalSekarang = formatTanggal();
+            var waktuSekarang = formatWaktu();
+
+            var tanggalWaktuElement = document.getElementById("tanggalWaktu");
+            tanggalWaktuElement.textContent = tanggalSekarang + ' ' + waktuSekarang;
+        }
+
+        updateWaktu();
+
+        setInterval(updateWaktu, 1000);
+    </script>
+</body>
+</html>
