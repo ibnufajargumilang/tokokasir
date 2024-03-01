@@ -111,13 +111,7 @@
             padding: .5rem 0;
             display: none;
             position: relative;
-        }
-
-        #close {
-            position: absolute;
-            background-color: #fff;
-            top: 50%;
-            right: 0;
+            transition: 0.5s;
         }
     </style>
 </head>
@@ -196,9 +190,15 @@
                 document.getElementById("statusLogin").innerHTML = "Berhasil Login";
                 statusLogin.style.display = "block";
                 statusLogin.style.backgroundColor = "green";
+                setTimeout(function () {
+                    statusLogin.style.display = 'none';
+                }, 3000);
             } else {
                 document.getElementById("statusLogin").innerHTML = "Username atau Password yang dimasukkan Salah!";
                 statusLogin.style.display = "block";
+                setTimeout(function () {
+                    statusLogin.style.display = 'none';
+                }, 3000);
             }
         });
     </script>
