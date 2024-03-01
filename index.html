@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir Toko | FlamboyanStore</title>
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1rem;
+        }
+
+        body {
+            background-color: #bfc2e7;
+        }
+
+        .form-group {
+            margin-bottom: 5px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .form-group input {
+            box-sizing: border-box;
+            padding: .5rem;
+            border: none;
+            width: 100%;
+            border-radius: .25rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+        }
+
+        .form-group button {
+            width: 100%;
+            border: none;
+            padding: .5rem;
+            margin-top: 5px;
+            border-radius: .25rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .form-group #username,
+        .form-group #password {
+            text-transform: lowercase;
+        }
+
+        .form-group #login {
+            background-color: #274e13;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-group #login:hover {
+            background-color: #38761d;
+        }
+
+        .form-group #reset {
+            background-color: #990000;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-group #reset:hover {
+            background-color: #cc0000;
+        }
+
+        .d-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+        }
+
+        .card {
+            min-width: 400px;
+            padding: 1rem;
+            border-radius: .25rem;
+            box-shadow: 3px 4px 5px rgba(0, 0, 0, 1);
+        }
+
+        .card-form {
+            background-color: #13174B;
+            color: #fff;
+        }
+
+        .label-failed {
+            font-size: small;
+            color: #ff0000;
+            text-align: right;
+        }
+
+        footer {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        #statusLogin {
+            text-align: center;
+            background-color: #ff0000;
+            color: #fff;
+            border-radius: .25rem;
+            padding: .5rem 0;
+            display: none;
+            position: relative;
+        }
+
+        #close {
+            position: absolute;
+            background-color: #fff;
+            top: 50%;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section style="position: relative; height: 100vh;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <div class="card card-form">
+                <div id="statusLogin"></div>
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <img src="icon.png" alt="Icon Toko" />
+                    <h1 style="font-size: 1.5rem; font-weight: normal;">KasirToko</h1>
+                </div>
+                <form id="gotoPanel">
+                    <div class="form-group">
+                        <label for="username">Masukkan Username</label>
+                        <input type="username" id="username" name="username" autocomplete="no">
+                        <div class="label-failed" id="check-un"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Masukkan Password</label>
+                        <input type="password" id="password" name="password">
+                        <div class="label-failed" id="check-pw"></div>
+                    </div>
+                    <div class="form-group d-grid">
+                        <button type="submit" id="login" name="login">Masuk</button>
+                        <button type="reset" id="reset" name="reset">Reset</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, -50%);">
+            <footer>
+                @KasirToko V.1
+            </footer>
+        </div>
+    </section>
+    <script>
+        document.getElementById("username").addEventListener("input", function () {
+            let username = document.getElementById("username").value;
+            if (username.includes(" ")) {
+                document.getElementById("check-un").innerHTML = "Terdapat Sepasi pada Username";
+            } else {
+                document.getElementById("check-un").innerHTML = "";
+            }
+        });
+        document.getElementById("password").addEventListener("input", function () {
+            let password = document.getElementById("password").value;
+            if (password.includes(" ")) {
+                document.getElementById("check-pw").innerHTML = "Terdapat Sepasai pada Password";
+            } else {
+                document.getElementById("check-pw").innerHTML = "";
+            }
+        });
+        document.getElementById("gotoPanel").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if (username.trim() == "") {
+                document.getElementById("check-un").innerHTML = "Username tidak Boleh Kosong";
+                return;
+            } else {
+                document.getElementById("check-un").innerHTML = "";
+            }
+
+            if (password.trim() == "") {
+                document.getElementById("check-pw").innerHTML = "Password tidak Boleh Kosong";
+                return;
+            } else {
+                document.getElementById("check-pw").innerHTML = "";
+            }
+
+            if (username === "admin" && password === "admin123") {
+                document.getElementById("statusLogin").innerHTML = "Berhasil Login";
+                statusLogin.style.display = "block";
+                statusLogin.style.backgroundColor = "green";
+            } else {
+                document.getElementById("statusLogin").innerHTML = "Username atau Password yang dimasukkan Salah!";
+                statusLogin.style.display = "block";
+            }
+        });
+    </script>
+</body>
+
+</html>
