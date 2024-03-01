@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,44 +12,98 @@
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             font-size: 1rem;
         }
-        body{
+
+        body {
             background-color: #bfc2e7;
         }
+
         #tanggalWaktu {
             color: #fff;
             font-weight: bold;
         }
+
         .breadcumb h1 {
             padding: .5rem 2rem 0 2rem;
             font-size: 2rem !important;
         }
+
         #areaMenu {
             padding: 1.5rem 2rem;
             display: grid;
             grid-template-columns: repeat(8, 1fr);
             grid-gap: 2rem;
         }
+
         .card-item {
-            min-width: 100%;
             min-height: 100px;
-            background-color: blue;
+            max-height: 100px;
+            background-color: #13174B;
+            color: #fff;
             border-radius: .25rem;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 5px 5px 1px rgba(0, 0, 0, 5);
+            transition: 0.2s;
+        }
+
+        .card-item:hover {
+            box-shadow: none;
+            transition: 0.2s;
+        }
+
+        .card-item span {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .card-item img {
+            position: absolute;
+            width: 50px;
+            transition: .5s;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card-item img:hover {
+            width: 60px;
+            transition: .5s;
+        }
+
+        @media screen and (max-width: 768px) {
+            #areaMenu {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
+
 <body>
     <nav style="background-color: black; padding: .5rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 5px 5px 16px rgba(0,0,0,1);">
         <div style="display: flex; align-items: center; color: #fff;">
-            <img src="icon.png" alt="Logo Kasir" style="margin-right: .25rem;"><h1 style="font-size: 1.2rem;">Toko Kasir</h1>
+            <img src="icon.png" alt="Logo Kasir" style="margin-right: .25rem;">
+            <h1 style="font-size: 1.2rem;">Toko Kasir</h1>
         </div>
         <div>
             <div id="tanggalWaktu"></div>
         </div>
     </nav>
-    <div class="breadcumb"><h1>Dashboard</h1></div>
+    <div class="breadcumb">
+        <h1>Dashboard</h1>
+    </div>
     <section id="areaMenu">
-        <div class="card-item">a</div>
-        <div class="card-item">a</div>
+        <div class="card-item" id="transaksiProgram"><span>Transaksi</span><img src="img/transaksi.png" alt="transaksi"></div>
+        <div class="card-item" id="keranjangProgram"><span>Keranjang</span><img src="img/keranjang.png" alt="keranjang"></div>
+        <div class="card-item" id="riwayatProgram"><span>Riwayat</span><img src="img/riwayat.png" alt="riwayat"></div>
+        <div class="card-item" id="inventoryProgram"><span>Inventory</span><img src="img/inventory.png" alt="inventory"></div>
+        <div class="card-item" id="penggunaProgram"><span>Pengguna</span><img src="img/pengguna.png" alt="pengguna"></div>
+        <div class="card-item" id="pengaturanProgram"><span>Pengaturan</span><img src="img/pengaturan.png" alt="pengaturan"></div>
+        <div class="card-item" id="laporanProgram"><span>Laporan</span><img src="img/laporan.png" alt="laporan"></div>
+        <div class="card-item" id="keluarProgram"><span>Keluar</span><img src="img/poweroff.png" alt="keluar"></div>
     </section>
     <script>
         function formatTanggal() {
@@ -93,4 +148,5 @@
         setInterval(updateWaktu, 1000);
     </script>
 </body>
+
 </html>
