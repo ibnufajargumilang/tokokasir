@@ -1,12 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informasi | FlamboyanStore</title>
     <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .cumb-child {
+            display: flex;
+            align-items: center;
+        }
+
+        .cumb-child img {
+            max-width: 30px;
+            transition: .5s;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .cumb-child img:hover {
+            max-width: 25px;
+            transition: .5s;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <nav style="background-color: black; padding: .5rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 5px 5px 16px rgba(0,0,0,1);">
+        <div style="display: flex; align-items: center; color: #fff;">
+            <img src="icon.png" alt="Logo Kasir" style="margin-right: .25rem;">
+            <h1 style="font-size: 1.2rem;">Toko Kasir</h1>
+        </div>
+        <div>
+            <span style="color: #fff;">Selamat Datang : Admin</span>
+        </div>
+    </nav>
+    <div class="breadcumb">
+        <div class="cumb-child">
+            <img src="img/kembali.png" alt="Back" id="halamanMenu">
+            <h1>Informasi</h1>
+        </div>
+        <div id="tanggalWaktu"></div>
+    </div>
+    <section id="areaInformasi">
+        <div class="infoJudul">
+            <h1>Tentang Toko Kasir</h1>
+            <p>Toko Kasir dibuat pertama-tama hanya untuk membangun portfolio saya untuk menjadi seorang web developer, toko kasir ini nantinya akan menjadi sebuah website Open Source yang berarti tersedia untuk umum, dan pengguna memiliki kebebasan untuk memodifikasinya sesuai kebutuhan dengan mendownload file yang sudah disediakan dan mengkonfigurasinya di komputer/hosting masing-masing. </p>
+        </div>
+        <div class="infoJudul">
+            <h1>Tentang Pembuat Toko Kasir</h1>
+            <p>Perkenalkan saya Ibnu Fajar Gumilang, saya lulusan Sarjana Teknik Informatika dari Universitas Indraprasta PGRI kampus B di Jakarta Timur, saya tertarik menjadi seorang Web Developer, IT Support, dan Web Programming, namun hal tersebut saat ini belum bisa saya gapai, entah akan tercapai atau tidak dan saat ini saya sedang aktif mencari pekerjaan sambil membaung web portfolio saya.</p>
+        </div>
+        <div class="infoJudul">
+            <h1>Kontak Pembuat Toko Kasir</h1>
+            <p>
+                <div class="media">Facebook : <a href="https://www.facebook.com/ibnufajar.g" target="_blank">Ib Ib</a></div>
+                <div class="media">Instagram : <a href="https://www.instagram.com/ibnufajar.g" target="_blank">Ibnu Fajar Gumilang</a></div>
+                <div class="media">YouTube : <a href="https://www.youtube.com/channel/UCSAV05ZOsI9WkgnDXqXlEvg" target="_blank">Ibnu Fajar Gumilang</a></div>
+                <div class="media">Whatsapp : <a href="https://wa.me/+6288213349451" target="_blank">+62 882-1334-9451</a></div>
+                <div class="media">Email : <a href="mailto:ibnu.fagumi001@gmail.com" target="_blank">ibnu.fagumi001@gmail.com</a></div>
+                <div class="media">GitHub : <a href="https://github.com/ibnufajargumilang" target="_blank">ibnufajargumilang</a></div>
+            </p>
+        </div>
+        <div class="infoJudul">
+            <h1>Toko Kasir Version.1.0</h1>
+            <p class="log-version">Log Version.1.0</p>
+            <ul>
+                <li>Released</li>
+            </ul>
+        </div>
+
+    </section>
+    <script src="assets/js/klink.js"></script>
 </body>
+
 </html>

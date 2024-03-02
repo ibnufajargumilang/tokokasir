@@ -169,8 +169,45 @@ footer {
   transition: 0.5s;
 }
 
+#areaInformasi {
+  padding: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2rem;
+}
+
 @media screen and (max-width: 768px) {
   #areaMenu {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.infoJudul h1 {
+  font-size: 1.4rem;
+  margin-bottom: .75rem;
+}
+
+.infoJudul p {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+.infoJudul a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #000000;
+  font-size: 1.1rem;
+}
+
+.infoJudul ul li {
+  font-size: 1.1rem;
+}
+
+.log-version {
+  font-weight: bold;
+}
+
+.media {
+  line-height: 1.5rem;
+  font-size: 1.1rem;
 }
