@@ -211,3 +211,19 @@ footer {
   line-height: 1.5rem;
   font-size: 1.1rem;
 }
+
+.cumb-child {
+  display: flex;
+  align-items: center;
+}
+
+.cumb-child img {
+  max-width: 30px;
+  transition: .5s;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.cumb-child img:hover {
+  max-width: 25px;
+  transition: .5s;
+}
