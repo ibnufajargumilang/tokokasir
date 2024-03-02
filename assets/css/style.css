@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1rem;
+}
+
+body {
+  background-color: #bfc2e7;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.form-group input {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border: none;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.form-group input:focus {
+  outline: none;
+}
+
+.form-group button {
+  width: 100%;
+  border: none;
+  padding: 0.5rem;
+  margin-top: 5px;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.form-group #username,
+.form-group #password {
+  text-transform: lowercase;
+}
+
+.form-group #login {
+  background-color: #274e13;
+  color: white;
+  cursor: pointer;
+}
+
+.form-group #login:hover {
+  background-color: #38761d;
+}
+
+.form-group #reset {
+  background-color: #990000;
+  color: white;
+  cursor: pointer;
+}
+
+.form-group #reset:hover {
+  background-color: #cc0000;
+}
+
+.d-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.card {
+  min-width: 400px;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 1);
+}
+
+.card-form {
+  background-color: #13174b;
+  color: #fff;
+}
+
+.label-failed {
+  font-size: small;
+  color: #ff0000;
+  text-align: right;
+}
+
+footer {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+#statusLogin {
+  text-align: center;
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0;
+  display: none;
+  position: relative;
+}
+
+#tanggalWaktu {
+  font-weight: bold;
+}
+
+.breadcumb {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem 0 2rem;
+}
+
+.breadcumb h1 {
+  font-size: 1.6rem !important;
+}
+
+#areaMenu {
+  padding: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 2rem;
+}
+
+.card-item {
+  min-height: 100px;
+  max-height: 100px;
+  background-color: #13174b;
+  color: #fff;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 5px 5px 1px rgba(0, 0, 0, 5);
+  transition: 0.2s;
+}
+
+.card-item:hover {
+  background-color: #282d7a;
+}
+
+.card-item:active {
+  box-shadow: none;
+  transition: 0.2s;
+}
+
+.card-item span {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.card-item img {
+  position: absolute;
+  width: 50px;
+  transition: 0.5s;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-item img:hover {
+  width: 60px;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  #areaMenu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
