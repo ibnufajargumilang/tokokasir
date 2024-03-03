@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panduan | FlamboyanStore</title>
     <link rel="icon" href="icon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        #areaPanduan {
+            padding: 1.5rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2rem;
+        }
+
+        .card-help {
+            min-height: 60px;
+            max-height: 100%px;
+            background-color: #13174b;
+            color: #fff;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 5px 5px 1px rgba(0, 0, 0, 5);
+            transition: 0.2s;
+        }
+
+        .card-help:hover {
+            background-color: #282d7a;
+        }
+
+        .card-help:active {
+            box-shadow: none;
+            transition: 0.2s;
+        }
+
+        .card-help p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .card-help img {
+            width: 2rem;
+            margin-right: .5rem;
+        }
+    </style>
 </head>
+
 <body>
     <nav style="background-color: black; padding: .5rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 5px 5px 16px rgba(0,0,0,1);">
         <div style="display: flex; align-items: center; color: #fff;">
@@ -24,8 +70,32 @@
         </div>
         <div id="tanggalWaktu"></div>
     </div>
+    <div id="areaPanduan">
+        <div class="card-help">
+            <p><img src="img/buku.png" alt="bukuPanduan">Panduan Menu Transaksi</p>
+        </div>
+        <div class="card-help">
+            <p><img src="img/buku.png" alt="bukuPanduan">Panduan Menu Keranjang</p>
+        </div>
+        <div class="card-help">
+            <p><img src="img/buku.png" alt="bukuPanduan">Panduan Menu Riwayat</p>
+        </div>
+        <div class="card-help">
+            <p><img src="img/buku.png" alt="bukuPanduan">Panduan Menu Inventory</p>
+        </div>
+        <div class="card-help">
+            <p><img src="img/buku.png" alt="bukuPanduan">Panduan Menu Pengguna</p>
+        </div>
+        <div class="card-help">
+            <p><img src="img/buku.png" alt="bukuPanduan">Panduan Menu Laporan</p>
+        </div>
+        <div class="card-help">
+            <p><img src="img/buku.png" alt="bukuPanduan">Panduan Menu Pengaturan</p>
+        </div>
+    </div>
 
     <script src="assets/js/timer.js"></script>
     <script src="assets/js/klink.js"></script>
 </body>
+
 </html>
